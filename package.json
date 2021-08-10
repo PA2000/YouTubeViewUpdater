@@ -1,0 +1,24 @@
+{
+  "name": "youtubeviewupdater",
+  "version": "1.0.0",
+  "description": "This application changes the title of my video to reflect the current number of views",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PA2000/YouTubeViewUpdater.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PA2000/YouTubeViewUpdater/issues"
+  },
+  "homepage": "https://github.com/PA2000/YouTubeViewUpdater#readme",
+  "dependencies": {
+    "google-auth-library": "^7.5.0",
+    "googleapis": "^84.0.0"
+  }
+}
