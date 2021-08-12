@@ -133,9 +133,9 @@ const updateVideoTitle = (myVideo, auth) => {
     },
     (err, response) => {
         if (err) {
-            console.log('Error updating video title: ' + err);
+            console.log('Error updating video title: \n' + err);
             return;
         }
-        console.log('Completed Update!');
+        console.log('Completed Update!\n');
     });
 }
