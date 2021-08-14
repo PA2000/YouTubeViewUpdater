@@ -3,6 +3,8 @@ require('dotenv').config();
 var { google } = require('googleapis');
 var OAuth2 = google.auth.OAuth2;
 
+const cron = require('node-cron');
+
 const youtube = google.youtube("v3");
 const videoId = process.env.VIDEO_ID;
 
@@ -79,4 +81,10 @@ const updateVideoTitle = (myVideo, auth, newTitle) => {
     })
 }
 
-main();
+const task = cron.schedule('8 17,25,34,42,51,59 * * * *', () => {
+    console.log('Running Update: ' + Date());
+    main();
+}, {
+    scheduled: true
+});
+task.start();
