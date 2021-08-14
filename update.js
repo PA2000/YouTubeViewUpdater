@@ -11,9 +11,9 @@ async function main() {
       const auth = authorize();
       const {resource, title, views, likes} = await getVideoInfo(auth);
       console.log('Retrieved video info: ' + title)
-      const newTitle = `This video has ${views} views and ${likes} likes!!`;
-      if(newTitle === title) console.log('Views & Likes have not changed! No need to update the title!');
-      else console.log('The new video title is: ' + await updateVideoTitle(resource, auth, newTitle));
+      const newTitle = `This video has ${views} views and ${likes} likes!`;
+      if(newTitle === title) console.log('Views & Likes have not changed! No need to update the title!\n');
+      else console.log('The new video title is: ' + await updateVideoTitle(resource, auth, newTitle) + '\n');
     }
     catch (e) {
       console.log(e);
@@ -61,14 +61,16 @@ const getVideoInfo = auth => {
 /**
  * Updates the video title
  *
+ * @param {video} myVideo The video that we are updating, used as the resource.
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
+ * @param {String} newTitle The new title for the video
  */
 const updateVideoTitle = (myVideo, auth, newTitle) => {
     return new Promise((resolve, reject) => {
       myVideo.snippet.title = newTitle;
       youtube.videos.update({
           auth: auth,
-          part: 'snippet,statistics',
+          part: 'snippet, statistics',
           resource: myVideo,
       }, (err, response) => {
           if (err) return reject(err);
