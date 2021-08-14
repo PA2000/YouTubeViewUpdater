@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/PA2000/YouTubeViewUpdater#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "google-auth-library": "^7.5.0",
     "googleapis": "^84.0.0"
   }

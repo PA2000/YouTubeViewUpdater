@@ -1,6 +1,5 @@
 #crednetials
-credentials.json
-client_secret.json
+.env
 
 # Logs
 logs
