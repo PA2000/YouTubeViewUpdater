@@ -81,6 +81,9 @@ const updateVideoTitle = (myVideo, auth, newTitle) => {
     })
 }
 
+/*
+* Schedules the code to run in alternating intervals of 8 and 9 seconds
+*/
 const task = cron.schedule('8 17,25,34,42,51,59 * * * *', () => {
     console.log('Running Update: ' + Date());
     main();
